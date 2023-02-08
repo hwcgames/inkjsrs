@@ -66,6 +66,22 @@ impl Story {
 	pub fn choose(&mut self, choice: usize) {
 		self.script.call("choose", &choice).unwrap()
 	}
+
+	pub fn jump(&mut self, to: String) {
+		self.script.call("jump", &to).unwrap()
+	}
+
+	pub fn set(&mut self, key: String, value: String) {
+		self.script.call("set", &(key, value)).unwrap()
+	}
+
+	pub fn get(&mut self, key: String) -> String {
+		self.script.call("set", &key).unwrap()
+	}
+
+	pub fn visited(&mut self, label: String) -> usize {
+		self.script.call("visited", &label).unwrap()
+	}
 }
 
 #[derive(Deserialize)]

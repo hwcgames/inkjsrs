@@ -44,3 +44,19 @@ function current_choices() {
 function choose(index) {
 	STORY.ChooseChoiceIndex(index)
 }
+
+function jump(to) {
+	STORY.ChoosePathString(to)
+}
+
+function set([key, value]) {
+	STORY.variablesState[key] = value
+}
+
+function get(key) {
+	return STORY.variablesState[key]
+}
+
+function visited(label) {
+	return STORY.state.VisitCountAtPathString(label)
+}
