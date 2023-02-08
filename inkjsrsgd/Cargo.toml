@@ -12,4 +12,4 @@ dashmap = "*"
 serde_json = "*"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
